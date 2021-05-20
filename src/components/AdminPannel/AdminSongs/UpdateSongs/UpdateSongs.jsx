@@ -21,6 +21,11 @@ export default function UpdateSongs({ item,getDatas }) {
     }
   };
 
+  const handleSelect = (e) => {
+    getDatas()
+    setOnSelect(e.target.value)
+  }
+
   const songUpdate = (e) => {
     console.log(songData)
     e.preventDefault();
@@ -54,7 +59,7 @@ export default function UpdateSongs({ item,getDatas }) {
         Update :
       </label>
       <select
-        onChange={(e) => setOnSelect(e.target.value)}
+        onChange={handleSelect}
         className="focus:outline-none px-3 py-2 bg-white bg-opacity-10 rounded-lg shadow-input2"
         name="song">
         {item.map((song, index) => {
