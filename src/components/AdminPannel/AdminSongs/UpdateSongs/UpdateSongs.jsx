@@ -17,7 +17,8 @@ export default function UpdateSongs({ item,getDatas }) {
       name: artistName
     },
     album:{
-      title: albumTitle
+      title: albumTitle,
+      picture: albumPicture
     }
   };
 
@@ -82,6 +83,7 @@ export default function UpdateSongs({ item,getDatas }) {
         placeholder={onSelect ? duration : 'Duration'}
       />
       <input
+      onChange={(e)=>setAlbumPicture(e.target.value)}
         className="focus:outline-none px-3 mt-5 py-2 bg-white bg-opacity-10 rounded-lg shadow-input2"
         type="text"
         placeholder={onSelect ? albumPicture : 'Album Picture'}

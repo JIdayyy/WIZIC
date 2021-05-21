@@ -11,7 +11,7 @@ export default function AdminPlaylist({ myPlayList, playListFetch, item,getDatas
   const [updatePicture, setUpdatePicture] = useState();
   const [onSelect, setOnSelect] = useState();
   const [selectSong, setSelectSong] = useState(item[0]);
-  const [onSelectP, setOnSelectP] = useState(myPlayList[0].title);
+  const [onSelectP, setOnSelectP] = useState();
   const [choosenP, setChoosenP] = useState();
   const [deletePlaylistSelect, setDeletePlaylistSelect] = useState();
   const [deleteSongSelect, setDeleteSongSelect] = useState();
@@ -154,7 +154,7 @@ useEffect(()=> {
             name="update"
             id=""
             className="focus:outline-none px-3 py-2 mt-5 bg-white bg-opacity-20 rounded-lg shadow-input2">
-            {myPlayList.map((playList, index) => {
+            { myPlayList && myPlayList.map((playList, index) => {
               return (
                 <option className=" bg-black bg-opacity-80 rounded-xl" key={index} value={index}>
                   {playList.title}
